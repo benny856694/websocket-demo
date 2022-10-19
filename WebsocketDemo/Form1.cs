@@ -31,32 +31,39 @@ namespace WebsocketDemo
 
         private void UpdateButtonText()
         {
-            buttonConnect.Text = _ws.IsRunning ? "断开" : "连接";
+            buttonConnect.Text = _ws?.IsRunning == true ? "断开" : "连接";
         }
 
         private async void buttonConnect_Click(object sender, EventArgs e)
         {
-            _ws?.Stop(System.Net.WebSockets.WebSocketCloseStatus.Empty, "force close");
-            
-            var url = new Uri($"ws://{textBoxIp.Text}:8000");
-            _ws = new WebsocketClient(url);
-            _ws.ReconnectionHappened.Subscribe(info => this.Log($"重新连接：{info.Type}"));
-            _ws.MessageReceived.Subscribe(msg => this.HandleMsg(msg));
-            buttonConnect.Enabled = false;
-            try
+            if (_ws?.IsRunning == true)
             {
-                await _ws.StartOrFail();
+                _ws?.Stop(System.Net.WebSockets.WebSocketCloseStatus.Empty, "force close");
                 UpdateButtonText();
             }
-            catch(Exception ex)
+            else
             {
-                this.Log($"无法连接{ex.Message}");
+                var url = new Uri($"ws://{textBoxIp.Text}:8000");
+                _ws = new WebsocketClient(url);
+                _ws.ReconnectionHappened.Subscribe(info => this.Log($"重新连接：{info.Type}"));
+                _ws.MessageReceived.Subscribe(msg => this.HandleMsg(msg));
+                buttonConnect.Enabled = false;
+                try
+                {
+                    await _ws.StartOrFail();
+                    UpdateButtonText();
+                }
+                catch (Exception ex)
+                {
+                    this.Log($"无法连接{ex.Message}");
+                }
+                finally
+                {
+                    buttonConnect.Enabled = true;
+                }
+
             }
-            finally
-            {
-                buttonConnect.Enabled = true;
-            }
-            
+
         }
 
         private void HandleMsg(ResponseMessage msg)
