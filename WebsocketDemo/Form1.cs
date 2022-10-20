@@ -68,10 +68,13 @@ namespace WebsocketDemo
 
         private void HandleMsg(ResponseMessage msg)
         {
-            if (msg.MessageType == System.Net.WebSockets.WebSocketMessageType.Binary)//实时视频
+            if (msg.MessageType == System.Net.WebSockets.WebSocketMessageType.Binary)//二进制数据流
             {
-                var img = Image.FromStream(new MemoryStream(msg.Binary));
-                pictureBoxVideoStream.Image = img;
+                if (Helper.GetImageFormat(msg.Binary) == ImageFormat.jpeg)//jpeg流
+                {
+                    var img = Image.FromStream(new MemoryStream(msg.Binary));
+                    pictureBoxVideoStream.Image = img;
+                }
             }
             else
             {
