@@ -39,6 +39,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBoxLog = new System.Windows.Forms.ListBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBoxVideoStream = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -46,6 +48,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVideoStream)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,20 +57,23 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "IP地址";
+            this.label1.Text = "相机IP地址";
             // 
             // textBoxIp
             // 
-            this.textBoxIp.Location = new System.Drawing.Point(61, 15);
+            this.textBoxIp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxIp.Location = new System.Drawing.Point(85, 15);
             this.textBoxIp.Name = "textBoxIp";
-            this.textBoxIp.Size = new System.Drawing.Size(617, 21);
+            this.textBoxIp.Size = new System.Drawing.Size(594, 21);
             this.textBoxIp.TabIndex = 1;
             this.textBoxIp.Text = "192.168.0.101";
             // 
             // buttonConnect
             // 
+            this.buttonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonConnect.Location = new System.Drawing.Point(705, 14);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(75, 23);
@@ -97,6 +104,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -129,7 +137,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(39, 91);
+            this.pictureBox1.Location = new System.Drawing.Point(58, 91);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(304, 224);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -157,6 +165,26 @@
             this.listBoxLog.Size = new System.Drawing.Size(795, 441);
             this.listBoxLog.TabIndex = 0;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.pictureBoxVideoStream);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(801, 447);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "实时视频";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxVideoStream
+            // 
+            this.pictureBoxVideoStream.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxVideoStream.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxVideoStream.Name = "pictureBoxVideoStream";
+            this.pictureBoxVideoStream.Size = new System.Drawing.Size(801, 447);
+            this.pictureBoxVideoStream.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxVideoStream.TabIndex = 0;
+            this.pictureBoxVideoStream.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -166,7 +194,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "WebSocket Demo";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -175,6 +203,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVideoStream)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,6 +222,8 @@
         private System.Windows.Forms.ListBox listBoxLog;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.PictureBox pictureBoxVideoStream;
     }
 }
 

@@ -38,7 +38,7 @@ namespace WebsocketDemo
         {
             if (_ws?.IsRunning == true)
             {
-                _ws?.Stop(System.Net.WebSockets.WebSocketCloseStatus.Empty, "force close");
+                _ws?.Dispose();
                 UpdateButtonText();
             }
             else
@@ -68,21 +68,31 @@ namespace WebsocketDemo
 
         private void HandleMsg(ResponseMessage msg)
         {
-            var faceEvt = JsonConvert.DeserializeObject<FaceCaptureEvent>(msg.Text);
-            this.Log($"{faceEvt.cmd}");
-
-            if (faceEvt.closeup_pic_flag)
+            if (msg.MessageType == System.Net.WebSockets.WebSocketMessageType.Binary)//实时视频
             {
-                var img = Image.FromStream(new MemoryStream(Convert.FromBase64String(faceEvt.closeup_pic.data)));
-                pictureBox1.Image = img;
+                var img = Image.FromStream(new MemoryStream(msg.Binary));
+                pictureBoxVideoStream.Image = img;
+            }
+            else
+            {
+                var faceEvt = JsonConvert.DeserializeObject<FaceCaptureEvent>(msg.Text);
+                this.Log($"{faceEvt.cmd}");
+                if (faceEvt.cmd == "face") //人脸抓拍
+                {
+                    if (faceEvt.closeup_pic_flag)
+                    {
+                        var img = Image.FromStream(new MemoryStream(Convert.FromBase64String(faceEvt.closeup_pic.data)));
+                        pictureBox1.Image = img;
+                    }
+
+                    if (faceEvt.match != null && faceEvt.match.image != null)
+                    {
+                        var img = Image.FromStream(new MemoryStream(Convert.FromBase64String(faceEvt.match.image)));
+                        pictureBox2.Image = img;
+                    }
+                }
             }
 
-            if (faceEvt.match!=null && faceEvt.match.image!=null)
-            {
-                var img = Image.FromStream(new MemoryStream(Convert.FromBase64String(faceEvt.match.image)));
-                pictureBox2.Image = img;
-            }
-            
         }
     }
 }
