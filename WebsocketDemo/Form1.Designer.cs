@@ -34,22 +34,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBoxVideoStream = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBoxLog = new System.Windows.Forms.ListBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBoxVideoStream = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVideoStream)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVideoStream)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +69,7 @@
             this.textBoxIp.Name = "textBoxIp";
             this.textBoxIp.Size = new System.Drawing.Size(594, 21);
             this.textBoxIp.TabIndex = 1;
-            this.textBoxIp.Text = "192.168.0.101";
+            this.textBoxIp.Text = "192.168.0.110";
             // 
             // buttonConnect
             // 
@@ -113,6 +113,26 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(809, 473);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.pictureBoxVideoStream);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(801, 447);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "实时视频";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxVideoStream
+            // 
+            this.pictureBoxVideoStream.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxVideoStream.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxVideoStream.Name = "pictureBoxVideoStream";
+            this.pictureBoxVideoStream.Size = new System.Drawing.Size(801, 447);
+            this.pictureBoxVideoStream.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxVideoStream.TabIndex = 0;
+            this.pictureBoxVideoStream.TabStop = false;
             // 
             // tabPage1
             // 
@@ -165,26 +185,6 @@
             this.listBoxLog.Size = new System.Drawing.Size(795, 441);
             this.listBoxLog.TabIndex = 0;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.pictureBoxVideoStream);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(801, 447);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "实时视频";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxVideoStream
-            // 
-            this.pictureBoxVideoStream.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxVideoStream.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxVideoStream.Name = "pictureBoxVideoStream";
-            this.pictureBoxVideoStream.Size = new System.Drawing.Size(801, 447);
-            this.pictureBoxVideoStream.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxVideoStream.TabIndex = 0;
-            this.pictureBoxVideoStream.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -199,12 +199,12 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVideoStream)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVideoStream)).EndInit();
             this.ResumeLayout(false);
 
         }
