@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Interop;
 using WebSocketSharp;
 
 namespace WebsocketDemo
@@ -58,14 +59,21 @@ namespace WebsocketDemo
 
         private void _ws_OnClose(object sender, CloseEventArgs e)
         {
-            this.Log("连接断开");
-            UpdateButtonText();
+            this.BeginInvoke(new Action(() =>
+            {
+                this.Log("连接断开");
+                UpdateButtonText();
+            }));
         }
 
         private void _ws_OnOpen(object sender, EventArgs e)
         {
-            this.Log("连接成功");
-            UpdateButtonText();
+            this.BeginInvoke(new Action(() =>
+            {
+                this.Log("连接成功");
+                UpdateButtonText();
+
+            }));
         }
 
         private void _ws_OnMessage(object sender, MessageEventArgs e)
@@ -80,6 +88,12 @@ namespace WebsocketDemo
 
         private void HandleMsg(MessageEventArgs msg)
         {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action<MessageEventArgs>(this.HandleMsg), msg);
+                return;
+            }
+
             if (msg.IsBinary)//二进制数据流
             {
                 if (Helper.GetImageFormat(msg.RawData) == ImageFormat.jpeg)//jpeg流
