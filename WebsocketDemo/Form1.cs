@@ -1,8 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using MiscUtil.Conversion;
+using MiscUtil.IO;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -96,11 +99,7 @@ namespace WebsocketDemo
 
             if (msg.IsBinary)//二进制数据流
             {
-                if (Helper.GetImageFormat(msg.RawData) == ImageFormat.jpeg)//jpeg流
-                {
-                    var img = Image.FromStream(new MemoryStream(msg.RawData));
-                    pictureBoxVideoStream.Image = img;
-                }
+                HandleBinaryStream(msg.RawData);
             }
             else
             {
@@ -122,6 +121,36 @@ namespace WebsocketDemo
                 }
             }
 
+        }
+
+        private void HandleBinaryStream(byte[] rawData)
+        {
+            var reader = new EndianBinaryReader(EndianBitConverter.Little, new MemoryStream(rawData));
+            var imageType = reader.ReadInt32() & 0x3ff; //是红外还是正常图像
+            reader.Seek(8, SeekOrigin.Begin);//跳过4字节
+            var dataType = reader.ReadInt32(); //图片还是视频流
+            if (dataType == 1) //jpg
+            {
+                var dataLen = rawData.Length - 20;
+                var buf = new byte[dataLen];
+                reader.Seek(20, SeekOrigin.Begin);
+                reader.Read(buf, 0, buf.Length);
+
+                if(Helper.GetImageFormat(buf) == ImageFormat.jpeg)
+                {
+                    var img = Image.FromStream(new MemoryStream(buf));
+                    if (imageType == 103) //普通
+                    {
+                        pictureBoxColorImage.Image = img;
+                    }
+                    else//红外
+                    {
+                        pictureBoxIRImg.Image = img;
+                    }
+                }
+                
+            }
+            
         }
     }
 }

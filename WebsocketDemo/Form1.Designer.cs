@@ -35,21 +35,25 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBoxVideoStream = new System.Windows.Forms.PictureBox();
+            this.pictureBoxColorImage = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBoxLog = new System.Windows.Forms.ListBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxIRImg = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVideoStream)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColorImage)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIRImg)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,7 +120,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.pictureBoxVideoStream);
+            this.tabPage3.Controls.Add(this.tableLayoutPanel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(801, 447);
@@ -124,15 +128,15 @@
             this.tabPage3.Text = "实时视频";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxVideoStream
+            // pictureBoxColorImage
             // 
-            this.pictureBoxVideoStream.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxVideoStream.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxVideoStream.Name = "pictureBoxVideoStream";
-            this.pictureBoxVideoStream.Size = new System.Drawing.Size(801, 447);
-            this.pictureBoxVideoStream.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxVideoStream.TabIndex = 0;
-            this.pictureBoxVideoStream.TabStop = false;
+            this.pictureBoxColorImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxColorImage.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxColorImage.Name = "pictureBoxColorImage";
+            this.pictureBoxColorImage.Size = new System.Drawing.Size(394, 441);
+            this.pictureBoxColorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxColorImage.TabIndex = 0;
+            this.pictureBoxColorImage.TabStop = false;
             // 
             // tabPage1
             // 
@@ -185,6 +189,31 @@
             this.listBoxLog.Size = new System.Drawing.Size(795, 441);
             this.listBoxLog.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxColorImage, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxIRImg, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(801, 447);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // pictureBoxIRImg
+            // 
+            this.pictureBoxIRImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxIRImg.Location = new System.Drawing.Point(403, 3);
+            this.pictureBoxIRImg.Name = "pictureBoxIRImg";
+            this.pictureBoxIRImg.Size = new System.Drawing.Size(395, 441);
+            this.pictureBoxIRImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxIRImg.TabIndex = 1;
+            this.pictureBoxIRImg.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -200,11 +229,13 @@
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVideoStream)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColorImage)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIRImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,7 +254,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.PictureBox pictureBoxVideoStream;
+        private System.Windows.Forms.PictureBox pictureBoxColorImage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBoxIRImg;
     }
 }
 
