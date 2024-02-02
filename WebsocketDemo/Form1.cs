@@ -2,18 +2,9 @@
 using MiscUtil.IO;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Interop;
 using WebSocketSharp;
 
 namespace WebsocketDemo
@@ -35,8 +26,8 @@ namespace WebsocketDemo
 
         private void UpdateButtonText()
         {
-            this.BeginInvoke(new Action(()=> buttonConnect.Text = _ws?.ReadyState == WebSocketState.Open ? "断开" : "连接"));
-            
+            this.BeginInvoke(new Action(() => buttonConnect.Text = _ws?.ReadyState == WebSocketState.Open ? "断开" : "连接"));
+
         }
 
         private async void buttonConnect_Click(object sender, EventArgs e)
@@ -136,7 +127,7 @@ namespace WebsocketDemo
                 reader.Seek(20, SeekOrigin.Begin);
                 reader.Read(buf, 0, buf.Length);
 
-                if(Helper.GetImageFormat(buf) == ImageFormat.jpeg)
+                //if(Helper.GetImageFormat(buf) == ImageFormat.jpeg)
                 {
                     var img = Image.FromStream(new MemoryStream(buf));
                     if (imageType == 103) //普通
@@ -148,9 +139,9 @@ namespace WebsocketDemo
                         pictureBoxIRImg.Image = img;
                     }
                 }
-                
+
             }
-            
+
         }
     }
 }
