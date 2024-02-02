@@ -117,9 +117,9 @@ namespace WebsocketDemo
         private void HandleBinaryStream(byte[] rawData)
         {
             var reader = new EndianBinaryReader(EndianBitConverter.Little, new MemoryStream(rawData));
-            var imageType = reader.ReadInt32() & 0x3ff; //是红外还是正常图像
-            reader.Seek(8, SeekOrigin.Begin);//跳过4字节
-            var dataType = reader.ReadInt32(); //图片还是视频流
+            var imageType = reader.ReadInt32() & 0x3ff; //IR image or normal image
+            reader.Seek(8, SeekOrigin.Begin);//skip 4 bytes
+            var dataType = reader.ReadInt32(); //if it's image stream
             if (dataType == 1) //jpg
             {
                 var dataLen = rawData.Length - 20;
@@ -130,11 +130,11 @@ namespace WebsocketDemo
                 //if(Helper.GetImageFormat(buf) == ImageFormat.jpeg)
                 {
                     var img = Image.FromStream(new MemoryStream(buf));
-                    if (imageType == 103) //普通
+                    if (imageType == 103) //normal image
                     {
                         pictureBoxColorImage.Image = img;
                     }
-                    else//红外
+                    else//IR
                     {
                         pictureBoxIRImg.Image = img;
                     }

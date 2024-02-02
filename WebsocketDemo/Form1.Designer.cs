@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxIp = new System.Windows.Forms.TextBox();
             this.buttonConnect = new System.Windows.Forms.Button();
@@ -35,207 +36,145 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxColorImage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxIRImg = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBoxLog = new System.Windows.Forms.ListBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxIRImg = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColorImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIRImg)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIRImg)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 19);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "相机IP地址";
             // 
             // textBoxIp
             // 
-            this.textBoxIp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxIp.Location = new System.Drawing.Point(85, 15);
+            resources.ApplyResources(this.textBoxIp, "textBoxIp");
             this.textBoxIp.Name = "textBoxIp";
-            this.textBoxIp.Size = new System.Drawing.Size(594, 21);
-            this.textBoxIp.TabIndex = 1;
-            this.textBoxIp.Text = "192.168.0.110";
             // 
             // buttonConnect
             // 
-            this.buttonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonConnect.Location = new System.Drawing.Point(705, 14);
+            resources.ApplyResources(this.buttonConnect, "buttonConnect");
             this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(75, 23);
-            this.buttonConnect.TabIndex = 2;
-            this.buttonConnect.Text = "连接";
             this.buttonConnect.UseVisualStyleBackColor = true;
             this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.buttonConnect);
             this.panel1.Controls.Add(this.textBoxIp);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(809, 47);
-            this.panel1.TabIndex = 3;
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 47);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(809, 473);
-            this.panel2.TabIndex = 4;
             // 
             // tabControl1
             // 
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(809, 473);
-            this.tabControl1.TabIndex = 0;
             // 
             // tabPage3
             // 
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(801, 447);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "实时视频";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxColorImage, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxIRImg, 1, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // pictureBoxColorImage
             // 
-            this.pictureBoxColorImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxColorImage.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.pictureBoxColorImage, "pictureBoxColorImage");
             this.pictureBoxColorImage.Name = "pictureBoxColorImage";
-            this.pictureBoxColorImage.Size = new System.Drawing.Size(394, 441);
-            this.pictureBoxColorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxColorImage.TabIndex = 0;
             this.pictureBoxColorImage.TabStop = false;
+            // 
+            // pictureBoxIRImg
+            // 
+            resources.ApplyResources(this.pictureBoxIRImg, "pictureBoxIRImg");
+            this.pictureBoxIRImg.Name = "pictureBoxIRImg";
+            this.pictureBoxIRImg.TabStop = false;
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(801, 447);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "抓拍";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(444, 91);
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(304, 224);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(58, 91);
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 224);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.listBoxLog);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(801, 447);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "日志";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // listBoxLog
             // 
-            this.listBoxLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.listBoxLog, "listBoxLog");
             this.listBoxLog.FormattingEnabled = true;
-            this.listBoxLog.ItemHeight = 12;
-            this.listBoxLog.Location = new System.Drawing.Point(3, 3);
             this.listBoxLog.Name = "listBoxLog";
-            this.listBoxLog.Size = new System.Drawing.Size(795, 441);
-            this.listBoxLog.TabIndex = 0;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxColorImage, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxIRImg, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(801, 447);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // pictureBoxIRImg
-            // 
-            this.pictureBoxIRImg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxIRImg.Location = new System.Drawing.Point(403, 3);
-            this.pictureBoxIRImg.Name = "pictureBoxIRImg";
-            this.pictureBoxIRImg.Size = new System.Drawing.Size(395, 441);
-            this.pictureBoxIRImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxIRImg.TabIndex = 1;
-            this.pictureBoxIRImg.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 520);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WebSocket Demo";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColorImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIRImg)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIRImg)).EndInit();
             this.ResumeLayout(false);
 
         }
